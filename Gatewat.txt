@@ -1,0 +1,138 @@
+sudo apt-get update
+
+sudo snap install --classic code		// install VS Code
+
+git config --global user.name "Qinyu"
+git config --global user.email "yu.qin@siemens.com"
+ssh-keygen -o -t rsa -C "yu.qin@siemens.com" -b 4096
+
+cat /home/test/.ssh/id_rsa.pub
+
+https://code.siemens.com/platformv/engineeringv/Gateway
+
+git clone git@code.siemens.com:platformv/engineeringv/Gateway/integration.git --recursive
+yes yes yes
+
+// git clone中断
+$ cd [项目根目录]
+$ git submodule update --init --recursive
+
+
+sudo apt install cmake
+sudo apt install make
+sudo apt install make-guile
+sudo apt install curl					// install curl
+sudo apt install build-essential			// install gcc
+sudo apt-get install libncurses5-dev 			// install ncurses
+sudo apt install python2.7				// install python 2.7
+
+sudo apt-get install zip unzip
+sudo apt-get install gawk				// 最初 Unix 系统上 awk 程序的 GNU 版本。相对于作为流式编辑器的 sed 而言，它提供了更为强大的编程语言特性。
+
+./scripts/feeds update -a
+./scripts/feeds install -a 
+./scripts/feeds install -p third_party		// 似乎不需要
+
+
+
+
+
+make ./package/feeds/knx_iot_agent/knxiot-stack/compile V=s -j8
+make ./package/feeds/knx_iot_agent/knxiot-agent/compile V=s -j8
+
+./build.sh openwrt all
+
+// git pull origin main		后期追加
+
+
+
+scp D:/Work_Data/UserData/Release_Bin/2022_03_14/*.* root@192.168.8.1:/tmp
+scp D:/Work_Data/UserData/Release_Bin/2022_03_14/*.ipk root@192.168.222.111:/home/ipk/
+
+ls /etc/bbs.conf
+
+ps | grep vfile
+ps | grep bbs
+ps | grep knx
+
+opkg remove thread_gateway
+opkg install thread_gateway_0.1.10.ipk
+
+
+
+opkg remove thread_gateway
+opkg install thread_gateway_0.1.10.ipk
+
+opkg remove knxiot-agent
+opkg install knxiot-agent_0.1.5_arm_cortex-a7_neon-vfpv4.ipk
+
+opkg remove knxiot-stack
+opkg install knxiot-stack_0.0.18_arm_cortex-a7_neon-vfpv4.ipk
+
+
+
+#安装 openssh
+sudo apt install openssh-server
+
+#修改 ssh配置文件
+sudo nano /etc/ssh/sshd_config
+
+Port = 22 #设置默认ssh端口
+PermitRootLogin yes #允许root用户登录
+PasswordAuthentication yes #用帐号密码方式登录
+
+ssh-keygen -A
+
+#启动ssh服务
+sudo service ssh start
+
+
+WSL迁移
+
+wsl --list
+#1、终止正在运行的分发或虚拟机：
+wsl --shutdown
+#2、对需要迁移的分发或虚拟机导出（我安装的版本是Ubuntu-20.04）：
+wsl --export Ubuntu-20.04 D:\wsl-Ubuntu-20.04.tar
+#3、卸载分发版或虚拟机（如果是要重装系统或换机器安装，这一步可以省略，但是要将上一步导出的文件保存好）
+wsl --unregister Ubuntu-20.04
+#4、导入新的分发版或虚拟机：
+wsl --import Ubuntu-20.04 D:\Work_Data\WSL_Data\ubuntu_20.04 D:\wsl-Ubuntu-20.04.tar --version 2
+
+
+
+
+make -j8 download V=s  #下载dl库，编译成功率更高
+
+make V=99
+pDevice->Snap();
+		
+		
+// OpenWRT环境配置		
+sudo apt install build-essential ccache ecj fastjar file g++ gawk gettext git java-propose-classpath libelf-dev libncurses5-dev libncursesw5-dev libssl-dev python python2.7-dev python3 unzip wget python3-distutils python3-setuptools python3-dev rsync subversion swig time xsltproc zlib1g-dev		
+
+./scripts/gen_config.py target_ipq40xx_gl-b1300th <function_profile>
+
+./scripts/gen_config.py target_ipq40xx_gl-b1300th
+make -j1
+
+
+
+etc/config/wireless
+
+option ssid 'OCT200.KNBA-17DB72'
+option ssid 'OCT200.KNBA-17DB6F'
+option key 'goodlife'
+
+
+//  查看软件依赖包
+cat Makefile |egrep -o "\+[a-zA-Z-]+ ?"|cut -c2-|tr '\n' ' '
+
+cat /proc/18644/status   查看内存
+
+
+https://openwrt.org/docs/guide-developer/obtain.firmware.sdk
+
+OTBR 接口
+
+http://192.168.8.1:11111/historian/schema/
